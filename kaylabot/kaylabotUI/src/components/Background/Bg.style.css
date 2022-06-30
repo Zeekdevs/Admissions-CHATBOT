@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.bg-img{
+    background-image: url('../../assets/bg/bg-main.jpg');
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    overflow: scroll;
+
+
+}
+
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .bg-img{
+        overflow: hidden;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    .bg-img{
+        overflow: hidden;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+    .bg-img{
+        overflow: hidden;
+    }
+}
