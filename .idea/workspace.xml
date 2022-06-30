@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8128d5cf-6f2f-4acf-99d9-0aab7793999d" name="Changes" comment="added">
-      <change afterPath="$PROJECT_DIR$/kaylabot/scraper/scraper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/scraper/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/scraper/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/scraper/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaylabot/scraper/scraper.js" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/scraper/scraper.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

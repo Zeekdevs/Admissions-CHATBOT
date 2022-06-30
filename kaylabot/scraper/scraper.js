@@ -12,8 +12,8 @@ axios(siteUrl)
         const $ = cheerio.load(html)
         const courses = []
 
-        $('#main-content section:nth-child(5)', html).each(function (){
-            const postgradresearch = $(this).find('a').text();
+        $('section:nth-child(3)', html).each(function (){
+            const postgradresearch = $(this).find('.columns-2').find('ul').find('li').text();
 
 
             /* const degClass = $('.grid', html).find(' #ug, #pgt, #pgr').text()*/
