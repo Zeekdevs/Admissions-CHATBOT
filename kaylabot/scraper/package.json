@@ -2,9 +2,9 @@
   "name": "scraper",
   "version": "1.0.0",
   "description": "scrapper for kayla",
-  "main": "index.js",
+  "main": "scraper.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon scraper.js"
   },
   "author": "zeek00",
   "license": "ISC",
