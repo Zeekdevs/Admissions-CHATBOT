@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8128d5cf-6f2f-4acf-99d9-0aab7793999d" name="Changes" comment="added">
+      <change afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/App.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/assets/bg/bg-main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/assets/bg/small.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/components/Home/Home.style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/components/chatbotUI/UI.style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/components/chatbotUI/UI.view.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/scraper/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/scraper/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/scraper/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/scraper/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/scraper/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/scraper/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/scraper/scraper.js" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/scraper/scraper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaylabot/kaylabotUI/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +62,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\isaac\Downloads\Admissions-CHATBOT-main\kaylabot\kaylabotUI" />
       <recent name="C:\Users\isaac\Downloads\Admissions-CHATBOT-main\kaylabot\backend" />
     </key>
   </component>
