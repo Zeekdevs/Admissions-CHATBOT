@@ -1,0 +1,183 @@
+*{
+    font-family: Consolas;
+}
+
+.contact{
+    z-index: 1;
+}
+
+.contact h2{
+    color: white;
+}
+
+.contact-area{
+    position: relative;
+    padding: 5%;
+    margin-top: 15vh;
+    background-color: rgb(0,0,0,0.9);
+    height: auto;
+    
+}
+
+.section-title{
+    margin-left: 25px;
+    text-align: left;
+}
+
+
+
+.info-area{
+    padding: 15px 0 0 0;
+    background-color: rgba(255,255,255,0.1);
+    
+}
+
+.content-area{
+    width: 100%;
+    padding: 1px;
+    height: inherit;
+}
+
+.icon-area{
+    float: left;
+    padding-left: 10px;
+    width: 20%;
+}
+
+
+.text-area{
+    margin: 5px 20px;
+    float: left;
+    width: 70%;
+    height: auto;
+}
+
+.content-area h3{
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 80px;
+    color: rgba(255,255,255,0.6);
+}
+
+.content-area p{
+   
+    text-align: left;
+    font-size: 1rem;
+    margin-top: -8px;
+    margin-left: 80px;
+    color: rgba(255,255,255);
+}
+
+
+
+.icons-border{
+    width: 50px;
+    height: 50px;
+    padding: 12px 0px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.icons{
+    color: #ff1737;
+    font-size: 1.5rem;
+}
+
+.social-acc-icons{
+    margin: 0px 10px 0 0;
+    font-size: 1.2em;
+}
+
+#contact-form{
+    padding: 5px 15px 0px 15px;
+}
+
+.contact-form input, textarea{
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255,255,255,0.6);
+    border: none;
+    border-radius: 1px;
+    margin: 10px 0;
+    
+}
+
+.contact-form input::placeholder{
+    color: rgba(255,255,255,0.6);
+
+
+}
+
+.contact-form textarea{
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255,255,255,0.6);
+    height: 20.4vh;
+    border: none;
+
+}
+.contact-form textarea::placeholder{
+    color: rgba(255,255,255,0.6);
+
+
+}
+
+.send-message-btn{
+    background-color: #ff1737;
+    margin-top: 10px;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+@media (min-width: 576px) {
+    
+    
+
+
+    
+    
+
+    
+    }
+
+    /* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .contact-area{
+        
+        background-color: rgb(0,0,0,0.9);
+       
+    }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .contact-area{
+    
+        background-color: rgb(0,0,0,0.9);
+        height: 70vh;
+    }
+    
+    }
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    .contact-form textarea{
+        
+        height: 18.3vh;
+        
+    
+    }
+    
+    }
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+    .contact-form textarea{
+        
+        height: 20.4vh;
+        
+    
+    }
+    }
