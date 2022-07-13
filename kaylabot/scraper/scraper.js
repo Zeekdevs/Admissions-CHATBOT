@@ -13,19 +13,15 @@ axios(siteUrl)
         const courses = []
 
         $('section:nth-child(3)', html).each(function (){
-            const postgradresearch = $(this).find('.columns-2').find('ul').find('li').text();
+            const undergrad = $(this).find('.columns-2').find('ul, li').text().replace(/\s+/g, " ")
+            console.log(undergrad)
+          /* courses.push({
 
+                    undergraduate: undergrad
 
-            /* const degClass = $('.grid', html).find(' #ug, #pgt, #pgr').text()*/
-           /* const title = $(this).find('ul').children().first().text()*/
-
-            courses.push({
-
-                postgradresearch
-
-            })
+            })*/
 
         })
-        console.log(courses)
+        /*console.log(courses)*/
     }).catch(err => console.log(err))
 exp.listen(PORT, () => console.log(`server running on port ${PORT}`))

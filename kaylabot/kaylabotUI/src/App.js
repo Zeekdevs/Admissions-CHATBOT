@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import './App.scss';
-import Bg from "./components/Background/Bg.view";
+import UIView from "./components/chatbotUI/UI.view";
+
 
 function App() {
   return (
     <div className="App">
-      <Bg/>
+      <UIView/>
     </div>
   );
 }

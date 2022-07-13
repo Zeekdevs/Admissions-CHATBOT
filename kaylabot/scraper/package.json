@@ -1,16 +1,17 @@
 {
-  "name": "scraper",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "scrapper for kayla",
+  "description": "back end app",
   "main": "scraper.js",
   "scripts": {
-    "start": "nodemon scraper.js"
+    "start": "nodemon "
   },
-  "author": "zeek00",
+  "author": "zeekdev",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.11",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "striptags": "^3.2.0"
   }
 }

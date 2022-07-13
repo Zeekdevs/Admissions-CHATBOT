@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8128d5cf-6f2f-4acf-99d9-0aab7793999d" name="Changes" comment="added">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/components/Drawer/Drawer.styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/components/Drawer/Drawer.view.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/components/Drawer/hamburger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/kaylabotUI/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/node_modules/.cache/default-development/0.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/kaylabotUI/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/node_modules/.cache/default-development/index.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/kaylabotUI/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/kaylabotUI/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/kaylabotUI/src/App.js" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaylabot/scraper/scraper.js" beforeDir="false" afterPath="$PROJECT_DIR$/kaylabot/scraper/scraper.js" afterDir="false" />
->>>>>>> 3bb2f796535f628c38fcd721446edd2fb264cc35
-    </list>
+    <list default="true" id="2a0df2bd-4eb2-4c04-a15d-c9002c159154" name="Changes" comment="added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ScraperZ" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,17 +43,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-<<<<<<< HEAD
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/kaylabot/kaylabotUI/src/components" />
-=======
->>>>>>> 3bb2f796535f628c38fcd721446edd2fb264cc35
+    <property name="last.edited.regexp" value="Sample Text" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\isaac\Downloads\Admissions-CHATBOT-main\kaylabot\kaylabotUI\src\components" />
-      <recent name="C:\Users\isaac\Downloads\Admissions-CHATBOT-main\kaylabot\kaylabotUI\src" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\isaac\Downloads\Admissions-CHATBOT-main\kaylabot\kaylabotUI" />
+      <recent name="C:\Users\isaac\Downloads\Admissions-CHATBOT-main\kaylabot\backend" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -81,10 +64,9 @@
       <updated>1655199108319</updated>
       <workItem from="1655199111396" duration="2105000" />
       <workItem from="1655201908039" duration="422000" />
-      <workItem from="1655216622526" duration="4897000" />
-      <workItem from="1655306176481" duration="2303000" />
-      <workItem from="1655794516281" duration="4018000" />
-      <workItem from="1656615117214" duration="31000" />
+      <workItem from="1657556505815" duration="6438000" />
+      <workItem from="1657615820120" duration="5892000" />
+      <workItem from="1657706449591" duration="1190000" />
     </task>
     <task id="LOCAL-00001" summary="added">
       <created>1655205839398</created>
@@ -122,20 +104,19 @@
       </map>
     </option>
   </component>
-<<<<<<< HEAD
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added" />
+    <option name="LAST_COMMIT_MESSAGE" value="added" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/kaylabot/kaylabotUI/src/App.js</url>
+          <line>9</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-=======
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="added" />
-    <option name="LAST_COMMIT_MESSAGE" value="added" />
->>>>>>> 3bb2f796535f628c38fcd721446edd2fb264cc35
   </component>
 </project>
