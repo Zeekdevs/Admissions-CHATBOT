@@ -8,11 +8,18 @@
     "npm": "8.5.2"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "backend": "nodemon index.js"
   },
   "author": "Isaac Isewede",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "body-parser": "^1.20.0",
+    "dialogflow": "^1.2.0",
+    "express": "^4.18.1",
+    "pb-util": "^1.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }

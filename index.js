@@ -1,12 +1,11 @@
-/*https://stark-bayou-46010.herokuapp.com/*/
+/*https://afternoon-castle-90465.herokuapp.com/*/
 
 const express = require ('express')
+const bodyParser = require('body-parser')//for reading request data and parsing
 const app = express()
 
-app.get('/', (req, res)=>{
+app.use(bodyParser.json())
+require('./Routes/dFRoutes')(app)
 
-    res.send({'hello':'there'})
-
-})
-const PORT = process.env.PORT || 4000;//specifies the heroky port
+const PORT = process.env.PORT || 4000; //specifies the heroky port
 app.listen(PORT, () => console.log(`server running on port ${PORT}`))
