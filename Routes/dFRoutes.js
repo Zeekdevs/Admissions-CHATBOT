@@ -1,32 +1,16 @@
-const dialogflow = require('dialogflow')
-const config = require('../config/Keys');
-const sessionClient = new dialogflow.SessionsClient()
-const sessionPath = sessionClient.sessionPath(config.googleProjectID, config.dialogflowSessionID)
-
+const chatbot = require('../Chatbot/chatbot')
 module.exports = app =>{
     app.get('/', (req, res)=>{
         res.send({'hello':'zeek'})
     })
 
     app.post('/api/text_query', async (req, res)=>{
-
-        const request = {
-            session: sessionPath,
-            queryInput: {
-                text: {
-                    // The query to send to the dialogflow agent
-                    text: req.body.text,
-                    // The language used by the client (en-US)
-                    languageCode: config.dialogflowsessionlang,
-                },
-            },
-        };
-        let responses = await sessionClient
-            .detectIntent(request) //detect an intent that returns a promise
+        let responses = await chatbot.queryText(req.body.text, req.body.parameters)
         res.send(responses[0].queryResult)
     })
 
-    app.post('/api/event_query', (req, res)=>{
-        res.send({'do':'text query'})
+    app.post('/api/event_query', async (req, res)=>{
+        let responses = await chatbot.queryEvent(req.body.event, req.body.parameters)
+        res.send(responses[0].queryResult)
     })
 }
