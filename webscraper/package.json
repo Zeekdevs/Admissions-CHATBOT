@@ -1,0 +1,17 @@
+{
+  "name": "webscraper",
+  "version": "1.0.0",
+  "description": "webscraper for kayla",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "author": "Isaac Isewede",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.18.1",
+    "striptags": "^3.2.0"
+  }
+}

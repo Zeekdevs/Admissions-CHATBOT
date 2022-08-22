@@ -1,0 +1,34 @@
+.bot-speaks-position{
+    float: left;
+    padding: 0 15px;
+    background: rgb(29,161,242);
+    color: whitesmoke;
+
+
+}
+
+.user-speaks-position{
+
+    float: right;
+    padding: 0 8px;
+    background: rgb(29,161,242);
+    color: whitesmoke;
+
+
+
+}
+
+.message-panel{
+    float: left;
+    margin: 5px 0 0 10px;
+    width: fit-content;
+    background: whitesmoke;
+    border-radius: 10px;
+    height: fit-content;
+    padding: 5px 10px;
+}
+.card-style{
+    //border: 1px solid green;
+    padding: 10px;
+    height: auto;
+}

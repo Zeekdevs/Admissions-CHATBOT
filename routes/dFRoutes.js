@@ -1,4 +1,4 @@
-const chatbot = require('../Chatbot/chatbot')
+const chatbot = require('../chatbot/chatbot')
 module.exports = app =>{
     app.get('/', (req, res)=>{
         res.send({'hello':'freaks'})
