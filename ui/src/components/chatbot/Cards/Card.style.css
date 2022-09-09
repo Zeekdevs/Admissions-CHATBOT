@@ -1,0 +1,118 @@
+.card-style{
+    width: 270px;
+    padding-right: 30px;
+}
+
+
+.card-render-bg{
+    display: inline-block;
+    width: 100%;
+    overflow-x: auto;
+    height: fit-content;
+    float: left;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+
+
+
+}
+
+.card-header{
+    background: rgb(255,92,30);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    color: #fff;
+}
+.course-header{
+    background: rgb(255,92,30);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 6vh;
+    color: #fff;
+}
+
+.card-content-me{
+    text-align: center;
+
+}
+.course-content-me{
+    text-align: center;
+    height: 10vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+
+
+
+
+}
+
+.card-content-me, a{
+    transition: 0.3s ease;
+    display: block;
+    color: rgb(13,20,45);
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
+    height: available;
+
+}
+
+.course-content-me a{
+
+    margin-top: 20px;
+
+
+}
+
+.card-content-me a:hover{
+    background: rgb(255,92,30);
+    transform: scale(1.0);
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.course-content-me a:hover{
+    background: rgb(255,92,30);
+    transform: scale(1.0);
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.bot-speaks-card-position{
+    margin-left: 10px;
+    padding: 0 15px;
+    background: rgb(255,92,30);
+    color: whitesmoke;
+}
+
+.card-wrap-style{
+    height: 270px;
+    padding-right: 30px;
+    float: left;
+}
+
+.course-body{
+    width: 43%;
+    background-color: #fff;
+    margin-right: 20px;
+    display: inline-block;
+    border-radius: 10px;
+
+
+}
+
+.course-render-style{
+    width: 100%;
+    height: 20vh;
+    display: inline-block;
+    overflow-x: auto;
+
+}

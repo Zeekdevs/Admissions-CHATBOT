@@ -1,21 +1,28 @@
+// calls to dialog flow
+
 "use strict"
 const structjson = require('./structjson')
 const dialogflow = require('dialogflow')
 const config = require('../config/Keys')
+const mongoose = require('mongoose')
 
 const projectID = config.googleProjectID
+const sessionID = config.dialogflowSessionID
+const languageCode = config.dialogflowsessionlang
+
 const credentials = {
     client_email: config.googleClientEmail,
     private_key: config.googlePrivateKey
 };
 const sessionClient = new dialogflow.SessionsClient({projectID, credentials})
-const sessionPath = sessionClient.sessionPath(config.googleProjectID, config.dialogflowSessionID)
 
+const Reg = mongoose.model('registration')
 
 
 
 module.exports = {
-    queryText: async function(text, parameters ={}){
+    queryText: async function(text, userID, parameters ={}){
+        let sessionPath = sessionClient.sessionPath(projectID, sessionID+userID)
         let self = module.exports
         const request = {
             session: sessionPath,
@@ -38,7 +45,8 @@ module.exports = {
         return responses
     },
 
-    queryEvent: async function(event, parameters ={}){
+    queryEvent: async function(event, userID, parameters ={}){
+        let sessionPath = sessionClient.sessionPath(projectID, sessionID+userID)
         let self = module.exports
         const request = {
             session: sessionPath,
@@ -58,7 +66,37 @@ module.exports = {
     },
 
     handleAction: function(responses){
+        let self = module.exports
+        let queryResult = responses[0].queryResult;
+
+        switch (queryResult.action){
+            case 'quickreplies-yes':
+                if (queryResult.allRequiredParamsPresent){
+                    self.saveRegistration(queryResult.parameters.fields)
+
+
+                }
+                break;
+        }
+
         return responses;
+    },
+
+    saveRegistration: async function (fields){
+        const registration = new Reg({
+            name: fields.name.stringValue,
+            email: fields.email.stringValue,
+            datereg: Date.now()
+        });
+        try{
+            let reg = await registration.save().then(r => {console.log('filed registration')});
+            console.log(reg)
+
+        }catch (err){
+            console.log(err)
+        }
+
+
     }
 
 

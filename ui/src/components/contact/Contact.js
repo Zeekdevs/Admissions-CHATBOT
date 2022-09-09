@@ -4,7 +4,7 @@ import ItemList from "./ItemList";
 const Contact = () =>{
     return(
         <div>
-            <h2>Contact</h2>
+            <h2>Conact</h2>
             <ItemList/>
         </div>
     )

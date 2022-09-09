@@ -1,0 +1,117 @@
+.css-9k9dil-MuiGrid-root{
+
+}
+
+#side-bar{
+    transition: 0.3s ease-in;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 60vw;
+    z-index: 7;
+    background-color: #fff;
+    height: 100vh;
+
+}
+.art-box{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 60%;
+    height: 40vh;
+    background: radial-gradient(circle, rgba(234,234,234,1) 0%, rgba(242,242,242,1) 35%, rgba(237,220,213,1) 100%);
+    border-bottom: none;
+    z-index: 7;
+}
+
+.vector{
+    width: 50vw;
+    right: 32px;
+    margin: 0 auto;
+
+    transform: translate(20px, 10px);
+
+}
+.courses-btn button{
+    display: block;
+    transition: 0.3s ease;
+    margin: 30px auto;
+    padding: 10px 5px;
+    width: 20vw;
+    border-style: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(255,92,30);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+.courses-btn button:hover{
+    transform: scale(1.2);
+    border: 2px solid  rgb(255,92,30);
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;;
+}
+
+
+
+
+
+.drawerCard{
+    position: fixed;
+    top: 0;
+    margin: 0;
+    height: 100vh;
+    padding: 48px;
+    overflow: hidden;
+    text-align: center;
+    background: #fafafa;
+    border: 1px solid #ebedf0;
+    border-radius: 2px;
+}
+
+
+
+@media only screen and (min-width: 992px) {
+
+    #side-bar{
+        transition: 0.3s ease-in;
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 20vw;
+        background-color: #fff;
+        height: 100vh;
+
+    }
+
+
+
+
+
+    .courses-btn button{
+        width: 10vw;
+    }
+    .courses-btn button:hover{
+        transform: scale(1.2);
+        border: 2px solid  rgb(255,92,30);
+        background-color: transparent;
+        box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;;
+    }
+    .vector{
+        display: block;
+        width: 20vw;
+        padding: 10px;
+        margin: 0 auto;
+        transform: translate(20px, 10px);
+
+    }
+
+
+
+
+
+}

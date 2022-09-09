@@ -1,0 +1,69 @@
+[
+  {
+    "undergraduate": {
+      "courses": [
+        {
+          "id": 1,
+          "courseCode": "BSc",
+          "courseTitle": "BSc Computer Science",
+          "about": {
+            "overview": "The course consists of 120 credits per year. Most modules are 20 credits, meaning you’ll study six modules each year. Some longer modules, such as a dissertation, are worth more (e.g. 40 credits). In these cases, you’ll study fewer modules - but the number of credits will always add up to 120",
+            "link": "https://www.hull.ac.uk/study/undergraduate/computer-science-bsc-meng"
+          },
+          "fees": {
+            "UK": "£9,250",
+            "International": "£18,300"
+          }
+        },
+        {
+          "id": 2,
+          "courseCode": "BSc",
+          "courseTitle": "BSc Physiotherapy",
+          "about": {
+            "overview": "The course consists of 120 credits per year. Most modules are 20 credits, meaning you’ll study six modules each year. Some longer modules, such as a dissertation, are worth more (e.g. 40 credits). In these cases, you’ll study fewer modules - but the number of credits will always add up to 120",
+            "link": "https://www.hull.ac.uk/study/undergraduate/computer-science-bsc-meng"
+          },
+          "fees": {
+            "UK": "£9,250",
+            "International": "£18,300"
+          }
+        }
+      ]
+    },
+    "postgraduate": [
+      {
+        "courseCode": "MSc",
+        "courseTitle": "MSc in Artificial Intelligence",
+        "about": "The programme introduces you to Python and its AI algorithms as a basis for learning how to communicate ideas and data visualisations to non-specialist audiences. It covers advanced technologies such as Machine Learning/Deep Learning and prepares you for the ethical, regulatory and social aspects of the fair use of AI.",
+        "link": "https://online.hull.ac.uk/courses/msc-artificial-intelligence",
+        "feesUK": "£8,250",
+        "feesInt": "£8,250"
+      },
+      {
+        "courseCode": "MSc",
+        "courseTitle": "MSc in Marketing Management",
+        "about": "This MSc programme, accredited by the Chartered Institute of Marketing, will enable you to develop a deep understanding of the marketing manager’s role in a truly international environment.",
+        "link": "https://www.hull.ac.uk/study/postgraduate/taught/marketing-management-msc",
+        "feesUK": "£9,750",
+        "feesInt": "£9,750"
+      }
+    ],
+    "research": [
+      {
+        "courseCode": "Postgraduate",
+        "courseTitle": "Marketing research degree",
+        "about": "The Hull University Business School provides an inspirational environment for researchers on PhD pathways. Our dynamic team of research-oriented academics have expertise in a number of key areas within marketing, including electronic and mobile marketing, and social media; services marketing including service evaluation; ethical, social, non-profit and political marketing; SMEs and business to business (B2B) marketing; brand management and internal branding; corporate social responsibility; relationship marketing; advertising and social media",
+        "link": "https://www.hull.ac.uk/study/postgraduate/taught/marketing-management-msc",
+        "feesUK": "£9,750",
+        "feesInt": "£9,750"
+      },
+      {
+        "courseCode": "Postgraduate",
+        "courseTitle": "Criminology research degrees",
+        "about": "By choosing Criminology as a postgraduate at Hull you will be joining a vibrant and supportive research community covering a wide range of specialisms, from the links between alcohol and violence and the history of crime and punishment to surveillance, green crime, and restorative justice approaches - among others. If you choose to study a PhD, you will find that we combine research expertise and cutting-edge facilities to deliver a unique experience",
+        "link": "https://www.hull.ac.uk/study/postgraduate/research/criminology-research-degrees",
+        "fees": "£4,596",
+        "feesInt": "£15,200 "
+      }
+    ]
+
