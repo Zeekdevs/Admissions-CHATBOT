@@ -1,12 +1,21 @@
 /*https://afternoon-castle-90465.herokuapp.com/*/
 
 const express = require ('express')
-//const cors = require('cors')
 const bodyParser = require('body-parser')//for reading request data and parsing
 const app = express()
-//app.use(cors())
+const config = require('./config/Keys')
+const mongoose = require('mongoose')
+mongoose.connect(config.mongoURI, {useNewUrlParser: true});
+require('./db-models/Reg')
+require('./db-models/PopularCourses')
+require('./db-models/Courses')
+const Course = require("./db-models/Courses");
 app.use(bodyParser.json())
 require('./routes/dFRoutes')(app)
+require('./routes/fulfillmentRoutes')(app)
+
+
+
 
 
 

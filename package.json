@@ -4,8 +4,8 @@
   "description": "Admissions advice bot",
   "main": "index.js",
   "engines": {
-    "node": "16.2.0",
-    "npm": "7.13.0"
+    "node": "16.15.0",
+    "npm": "8.5.2"
   },
   "scripts": {
     "start": "node index.js",
@@ -16,13 +16,15 @@
   "author": "Isaac Isewede",
   "license": "ISC",
   "dependencies": {
-    "actions-on-google": "^3.0.0",
+    "actions-on-google": "^2.6.0",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dialogflow": "^1.2.0",
+    "dialogflow-fulfillment": "^0.6.1",
     "express": "^4.18.1",
     "grpc": "^1.24.11",
     "mongodb": "^4.8.1",
+    "mongoose": "^6.5.3",
     "pb-util": "^1.0.3"
   },
   "devDependencies": {

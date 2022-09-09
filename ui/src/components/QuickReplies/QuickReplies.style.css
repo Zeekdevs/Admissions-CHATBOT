@@ -1,0 +1,32 @@
+
+
+.qr-panel{
+    display: block;
+    text-align: center;
+}
+
+.action-btn{
+    margin: 0 10px;
+
+}
+
+.query-text{
+    color: #0d47a1;
+}
+
+.val{
+    text-transform: capitalize;
+}
+
+.btn-styles{
+    transition: 0.3s ease;
+    display: inline-block;
+    background-color: rgb(255,92,30,0.9);
+    margin: 8px ;
+}
+
+.btn-styles:hover{
+    transform: scale(1.1);
+    background-color: rgb(13,20,45);
+
+}

@@ -4,7 +4,6 @@ import './Message.styles.css'
 
 function Message(props){
     return(
-
             <Container>
                 <Row>
                     <Col sm={12}>
@@ -22,6 +21,7 @@ function Message(props){
                                     <div className="message-panel">
                                         <span className="black-text">
                                         {props.text}
+
                                         </span>
                                     </div>
                                 </Col>
