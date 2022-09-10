@@ -4,7 +4,7 @@ import Landing from "./pages/Landing";
 import Header from "./Header";
 import Chatbot from "./chatbot/Chatbot";
 import './App.css'
-import UIView from "./chatbot/UI.view";
+
 
 const App = () => {
     return (

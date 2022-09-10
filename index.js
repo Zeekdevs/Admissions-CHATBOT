@@ -9,12 +9,21 @@ mongoose.connect(config.mongoURI, {useNewUrlParser: true});
 require('./db-models/Reg')
 require('./db-models/PopularCourses')
 require('./db-models/Courses')
-const Course = require("./db-models/Courses");
+
 app.use(bodyParser.json())
 require('./routes/dFRoutes')(app)
 require('./routes/fulfillmentRoutes')(app)
 
+if(process.env.NODE_ENV === 'production'){
 
+    app.use(express.static('client/build'));// hander front end files(css,js,html)
+
+    const path = require('path'); // handler for front unhandled routes
+    app.get('*', (req, res) =>{
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    })
+
+}
 
 
 

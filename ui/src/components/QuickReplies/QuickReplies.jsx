@@ -2,6 +2,7 @@ import React, { Component} from "react";
 import Reply from "./Reply";
 import {Col} from "react-bootstrap";
 import './QuickReplies.style.css'
+import {AiFillRobot} from "react-icons/ai";
 
 class QuickReplies extends Component {
     constructor(props) {
@@ -37,11 +38,17 @@ class QuickReplies extends Component {
     render() {
         return(
             <div className="card-style">
-                    <Col sm={2}>
+                    <Col sm={2} style={{color:'#000', marginBottom:'10px'}}>
 
-                            <a href="#" className="btn-floating btn-medium waves-effect bot-speaks-position">
-                                {this.props.speaks}
+                            <a href="#" className="bot-font-position">
+                                <AiFillRobot style={{
+                                    fontSize: '20px',
+                                    marginBottom: '-5px',
+                                    color: '#fff'
+                                }
+                                }/>
                             </a>
+                                {this.props.speaks}
                     </Col>
                 <div className="message-panel qr-panel">
                     <Col sm={10}>

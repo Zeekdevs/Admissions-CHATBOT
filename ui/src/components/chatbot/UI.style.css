@@ -20,6 +20,7 @@
     z-index: 8;
 }
 
+
 .robot-icon{
     margin: 15px 15px;
     font-size: 2.5em;
@@ -53,19 +54,23 @@
 #conversation-area{
     position: fixed;
     top: 0;
-    background-color: rgb(24,34,59);
+    background: linear-gradient( 110.3deg,  rgb(222,222,222) 4.3%, rgb(222,222,222) 96.7% );
     width: 100vw;
     height: 100vh;
     transition: 2s ease-in-out;
     z-index: 10;
 }
 
+
+
+
 .area-border{
     position: absolute;
     display: flex;
     top: 0;
     z-index: 3;
-    justify-content: right;
+    flex-direction: row;
+    justify-content: left;
     border-top-right-radius: 0;
     width: inherit;
     height: 8vh;
@@ -78,39 +83,60 @@
     width: inherit;
     overflow: auto;
     overflow-x: hidden;
-    max-height: 90vh;
+    max-height: 79vh;
     margin: 0;
     padding: 0;
 }
 .text-area{
     position: fixed;
-    background-color: #1C1B29;
-    bottom: 0;
-    border-top: 1px solid dimgrey;
+    background-color: rgb(242,242,242);
+    bottom: 30px;
     width: inherit;
-    border-bottom: none;
     z-index: 5;
 }
 .text-area, input{
-    color: #fff;
+    color: #000;
+
+
 }
 
 .footer{
-    display: block;
+    position: absolute;
+    bottom: 0;
     width: inherit;
-    height: 10vh;
+    height: 6vh;
     color: #fff;
     margin: 0 auto;
     text-align: center;
-    background-color: rgb(29,161,242);
+    z-index: 7;
+    background-color: rgb(255,92,30);
 
 }
+.bot-online{
+    color: #fff;
 
+
+}
+.bot-online, h5{
+    color: #fff;
+    font-size: 15px;
+
+}
+.online{
+    margin-left: 15px;
+    margin-top: 0;
+}
+.online span{
+    color: #0f9d58;
+    font-size: 4em;
+}
 .cancel{
     font-size: 2rem;
-    margin: 10px 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: auto;
     cursor: pointer;
-    color: #282c34;
+    color: #fff;
 }
 
 
@@ -129,7 +155,7 @@
 
 input::placeholder{
     font-size: 1em;
-    color: #fff;
+    color: #000;
     padding-left: 10px;
     font-stretch: ultra-expanded;
 }
@@ -184,8 +210,7 @@ input::placeholder{
 @media only screen and (min-width: 992px) {
 
     #conversation-area{
-        width: 50vw;
-
+        width: 30vw;
     }
 
 

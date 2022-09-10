@@ -1,9 +1,19 @@
 .bot-speaks-position{
-    padding: 0 15px;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     background: rgb(255,92,30);
     color: whitesmoke;
     z-index: 1;
 
+
+}
+.bot-font-position{
+    background: rgb(255,92,30);
+    padding: 10px;
+    margin: 10px 10px;
+    border-radius: 50%;
 
 }
 
@@ -20,9 +30,10 @@
 
 .message-panel{
     float: left;
-    margin: 10px 0 40px 10px;
+    margin: 10px 0 70px 10px;
     width: inherit;
     background: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     border-radius: 10px;
     height: fit-content;
     padding: 5px 10px;
