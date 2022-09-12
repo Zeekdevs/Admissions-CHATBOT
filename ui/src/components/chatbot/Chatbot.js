@@ -56,7 +56,7 @@ class Chatbot extends Component{
 
         this.setState({messages: [...this.state.messages, says]})
         try{
-            const res = await axios.post('api/text_query',{textQuery, userID: cookies.get('userId')}) //parsing the cookie session and textQuery to df
+            const res = await axios.post('api/text_query',{text: textQuery, userID: cookies.get('userId')}) //parsing the cookie session and textQuery to df
             for (let msg of res.data.fulfillmentMessages){
 
                 let says = {
@@ -86,7 +86,7 @@ class Chatbot extends Component{
 
     async event_query(eventQuery){
         try{
-            const res = await axios.post('api/event_query', {eventQuery , userID: cookies.get('userId')}) // parsing the cookie session  and eventQuery to df
+            const res = await axios.post('api/event_query', {event:eventQuery , userID: cookies.get('userId')}) // parsing the cookie session  and eventQuery to df
             for (let msg of res.data.fulfillmentMessages){
                 let says = {
                     speaks: 'KAYLA',
