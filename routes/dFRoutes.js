@@ -2,9 +2,7 @@
 //setting up api calls from backend to dialogflow
 const chatbot = require('../chatbot/chatbot')
 module.exports = app =>{
-    app.get('/', (req, res)=>{
-        res.send({'hello':'freaks'})
-    })
+
 
     //texts request handler
     app.post('/api/text_query', async (req, res)=>{

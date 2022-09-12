@@ -4,23 +4,25 @@
   "description": "Admissions advice bot",
   "main": "index.js",
   "engines": {
-    "node": "16.15.0",
-    "npm": "8.5.2"
+    "node": "16.2.0",
+    "npm": "7.13.0"
   },
   "scripts": {
     "start": "node index.js",
     "backend": "nodemon index.js",
     "frontend": "npm run start --prefix ui",
-    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix ui && npm run build --prefix ui"
   },
   "author": "Isaac Isewede",
   "license": "ISC",
   "dependencies": {
-    "actions-on-google": "^2.6.0",
+    "actions-on-google": "^3.0.0",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dialogflow": "^1.2.0",
     "dialogflow-fulfillment": "^0.6.1",
+    "dialogflow-fulfillment-helper": "^0.7.1",
     "express": "^4.18.1",
     "grpc": "^1.24.11",
     "mongodb": "^4.8.1",

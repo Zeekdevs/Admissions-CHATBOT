@@ -16,11 +16,12 @@
 }
 .art-box{
     position: fixed;
+    display: flex;
     bottom: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
-    width: 60%;
+    width: 100%;
     height: 40vh;
     background: radial-gradient(circle, rgba(234,234,234,1) 0%, rgba(242,242,242,1) 35%, rgba(237,220,213,1) 100%);
     border-bottom: none;
@@ -28,10 +29,9 @@
 }
 
 .vector{
-    width: 50vw;
-    right: 32px;
+    width: 50vw
+;
     margin: 0 auto;
-
     transform: translate(20px, 10px);
 
 }
@@ -72,7 +72,14 @@
     border-radius: 2px;
 }
 
+@media only screen and (min-width: 600px) {
+    #side-bar {
+        height: 60vh;
+        width: 40vw;
 
+    }
+
+}
 
 @media only screen and (min-width: 992px) {
 
@@ -89,7 +96,9 @@
     }
 
 
-
+.art-box{
+    width: 60%;
+}
 
 
     .courses-btn button{

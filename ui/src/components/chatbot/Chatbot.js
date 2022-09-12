@@ -3,7 +3,7 @@ import axios from "axios/index";
 import './UI.style.css'
 import './Cards/Card.style.css'
 import {MdCancel} from 'react-icons/md'
-import {Col, Container, Form, Row} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 import {IoSend} from "react-icons/io5";
 import {AiFillRobot} from "react-icons/ai";
 import Cookies from "universal-cookie/es6";
@@ -11,10 +11,10 @@ import {v4 as uuid} from 'uuid';
 import Message from "./Message/Message";
 import PageCards from "./Cards/PageCards";
 import QuickReplies from "../QuickReplies/QuickReplies";
-import {click} from "@testing-library/user-event/dist/click";
 import Undergrad from "./Cards/Undergrad";
 import Research from "./Cards/Research";
 import Postgrad from "./Cards/Postgrad";
+import SmartToyIcon from '@mui/icons-material/SmartToy';
 
 
 
@@ -22,12 +22,13 @@ import Postgrad from "./Cards/Postgrad";
 const cookies = new Cookies(); // object for cookies
 class Chatbot extends Component{
     endMessage;
-    talkInput;
+    //talkInput;
     constructor(props) {
         super(props);
 
         this.inputKeyPressHandle = this.inputKeyPressHandle.bind(this);
         this.quickReplyHandler = this.quickReplyHandler.bind(this);
+        //this.clickIcon = this.clickIcon.bind(this);
         this.cardClick = this.cardClick.bind(this);
         this.hide = this.hide.bind(this);
         this.show = this.show.bind(this);
@@ -45,7 +46,7 @@ class Chatbot extends Component{
     async text_query(textQuery){
 
         let says ={
-            speaks: 'me',
+            speaks: 'user',
             msg:{
                 text:{
                     text: textQuery
@@ -54,32 +55,62 @@ class Chatbot extends Component{
         }
 
         this.setState({messages: [...this.state.messages, says]})
+        try{
+            const res = await axios.post('api/text_query',{textQuery, userID: cookies.get('userId')}) //parsing the cookie session and textQuery to df
+            for (let msg of res.data.fulfillmentMessages){
 
-        const res = await axios.post('api/text_query',{text: textQuery, userID: cookies.get('userId')}) //parsing the cookie session and textQuery to df
-        for (let msg of res.data.fulfillmentMessages){
-            console.log(JSON.stringify(msg));
-            let says = {
-                speaks: 'k',
-                msg: msg
+                let says = {
+                    speaks: 'KAYLA',
+                    msg: msg
+                }
+                this.setState({messages: [...this.state.messages, says]}) //bot previous messages and new message added to new array
+
+
             }
-            this.setState({messages: [...this.state.messages, says]}) //bot previous messages and new message added to new array
-
-
+        } catch (err){ //catch problems with querying text messages from bot
+            says ={
+                speaks: 'KAYLA',
+                msg:{
+                    text:{
+                        text: 'Having trouble connecting to the required resources, Please try again later'
+                    }
+                }
+            }
+            this.setState({messages: [...this.state.messages, says]});
+            let errmsg = this;
+            setTimeout(()=>{
+                errmsg.setState({showBot: false})
+            }, 2000);
         }
-    }
+    };
 
     async event_query(eventQuery){
-        const res = await axios.post('api/event_query', {event: eventQuery , userID: cookies.get('userId')}) // parsing the cookie session  and eventQuery to df
-        for (let msg of res.data.fulfillmentMessages){
-            let says = {
-                speaks: 'k',
-                msg: msg
+        try{
+            const res = await axios.post('api/event_query', {eventQuery , userID: cookies.get('userId')}) // parsing the cookie session  and eventQuery to df
+            for (let msg of res.data.fulfillmentMessages){
+                let says = {
+                    speaks: 'KAYLA',
+                    msg: msg
+                }
+                this.setState({messages: [...this.state.messages, says]}) //bot previous messages and new message added to new array
             }
-            this.setState({messages: [...this.state.messages, says]}) //bot previous messages and new message added to new array
+        }catch (err){
+            let says ={
+                speaks: 'KAYLA',
+                msg:{
+                    text:{
+                        text: 'Having trouble connecting to the required resources, Please try again later'
+                    }
+                }
+            }
+            this.setState({messages: [...this.state.messages, says]});
+            let errmsg = this;
+            setTimeout(()=>{
+                errmsg.setState({showBot: false})
+            }, 2000);
+
         }
-
-    }
-
+    };
 
 
     cardClick(event,stringValue){
@@ -101,10 +132,6 @@ class Chatbot extends Component{
     // message life cycle
     componentDidUpdate() {
         this.endMessage.scrollIntoView({behavior: 'smooth'});
-        if(this.talkInput){
-            this.talkInput.focus();
-        }
-
     }
 
     show(event){
@@ -156,11 +183,18 @@ class Chatbot extends Component{
             </div>
         } else if(message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.cards){ // check if message is card
             return <div key={i}>
-                <div style={{}}>
-                    <a href="#" className="btn-floating btn-medium waves-effect bot-speaks-card-position">
-                        {message.speaks}
+                <Col sm={2}  style={{color:'#000', marginBottom:'10px'}} >
+                    <a href="#" className="bot-font-position">
+                        <AiFillRobot style={{
+                            fontSize: '20px',
+                            marginBottom: '-5px',
+                            color: '#fff'
+                        }
+                        }/>
                     </a>
-                </div>
+
+                    {message.speaks}
+                </Col>
                 <div key={i} className='card-render-bg'>
                     {this.renderCards(message.msg.payload.fields.cards.listValue.values)}
                 </div>
@@ -168,12 +202,19 @@ class Chatbot extends Component{
 
         } else if(message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.undergraduate){ // check if message is undergrad card
             return <div key={i}>
-                <div style={{}}>
-                    <a href="#" className="btn-floating btn-medium waves-effect bot-speaks-card-position">
-                        {message.speaks}
+                <Col sm={2}  style={{color:'#000', marginBottom:'10px'}} >
+                    <a href="#" className="bot-font-position">
+                        <AiFillRobot style={{
+                            fontSize: '20px',
+                            marginBottom: '-5px',
+                            color: '#fff'
+                        }
+                        }/>
                     </a>
-                </div>
-                <div key={i} className='card-render-bg' style={{ }}>
+
+                    {message.speaks}
+                </Col>
+                <div key={i} className='card-render-bg' >
                     <div className='course-render-style'>
                         {this.renderUndergrad(message.msg.payload.fields.undergraduate.listValue.values)}
                     </div>
@@ -182,11 +223,18 @@ class Chatbot extends Component{
 
         }  else if(message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.research){ // check if message is undergrad card
             return <div key={i}>
-                <div style={{}}>
-                    <a href="#" className="btn-floating btn-medium waves-effect bot-speaks-card-position">
-                        {message.speaks}
+                <Col sm={2}  style={{color:'#000', marginBottom:'10px'}} >
+                    <a href="#" className="bot-font-position">
+                        <AiFillRobot style={{
+                            fontSize: '20px',
+                            marginBottom: '-5px',
+                            color: '#fff'
+                        }
+                        }/>
                     </a>
-                </div>
+
+                    {message.speaks}
+                </Col>
                 <div key={i} className='card-render-bg' style={{ }}>
                     <div className='course-render-style'>
                         {this.renderResearch(message.msg.payload.fields.research.listValue.values)}
@@ -196,11 +244,18 @@ class Chatbot extends Component{
 
         } else if(message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.postgraduate){ // check if message is undergrad card
             return <div key={i}>
-                <div style={{}}>
-                    <a href="#" className="btn-floating btn-medium waves-effect bot-speaks-card-position">
-                        {message.speaks}
+                <Col sm={2}  style={{color:'#000', marginBottom:'10px'}} >
+                    <a href="#" className="bot-font-position">
+                        <AiFillRobot style={{
+                            fontSize: '20px',
+                            marginBottom: '-5px',
+                            color: '#fff'
+                        }
+                        }/>
                     </a>
-                </div>
+
+                    {message.speaks}
+                </Col>
                 <div key={i} className='card-render-bg' style={{ }}>
                     <div className='course-render-style'>
                         {this.renderPostgrad(message.msg.payload.fields.postgraduate.listValue.values)}
@@ -222,7 +277,7 @@ class Chatbot extends Component{
 
 
 
-    componentDidMount() {
+    async componentDidMount() {
 
         const circle = document.getElementById('b-circle');
 
@@ -249,11 +304,18 @@ class Chatbot extends Component{
     // method to listen for user input
     inputKeyPressHandle(e){
         if(e.key === 'Enter'){
-            this.text_query(e.target.value).then(res => {return console.log('filed')});
+            this.text_query(e.target.value).then(res => {return console.log('key pressed filled')});
             e.target.value = '';
         }
 
     }
+
+   clickIcon(){
+        let icon = document.getElementById('send-icon');
+        icon.style.color = 'rgb(255,92,30)';
+
+    }
+
 
 
     // method to handle quick replies
@@ -269,16 +331,6 @@ class Chatbot extends Component{
 
    // main component render
     render() {
-
-        const hideCircle = e => {
-            document.getElementById("b-circle").style.display = 'none';
-            document.getElementById("conversation-area").style.display = 'block';
-
-        }
-        const showCircle = e => {
-            document.getElementById("b-circle").style.display = 'block';
-            document.getElementById("conversation-area").style.display = 'none';
-        }
         if(this.state.showBot){
             return(
                 <Container>
@@ -293,6 +345,13 @@ class Chatbot extends Component{
 
                             <div id="conversation-area">
                                 <div className="area-border">
+                                    <div className="bot-online">
+                                        <AiFillRobot style={{
+                                            fontSize: '40px',
+                                            margin: '5px 0 0 10px'
+                                        }}/>
+                                    </div>
+                                    <h5 className='online'><span>.</span>ONLINE</h5>
                                     <MdCancel onClick={this.hide} className="cancel"/>
                                 </div>
                                 <div className="conversation">
@@ -304,14 +363,19 @@ class Chatbot extends Component{
                                 </div>
                                 <div className="text-area">
                                     <input
+                                        id= "text-input"
                                         ref={(input) =>{
                                             this.talkInput = input
                                         }}
                                         type="text"
+                                        onKeyDown={this.clickIcon}
                                         onKeyPress={this.inputKeyPressHandle}
-                                        placeholder="Type message here.."
+                                        placeholder="Type message here"
                                     />
-                                    <IoSend className="send-icon" />
+                                    <IoSend id='send-icon' className="send-icon" />
+                                </div>
+                                <div className="footer">
+                                    <h5>Powered by KAYLABOT</h5>
                                 </div>
 
                             </div>

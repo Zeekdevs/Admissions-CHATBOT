@@ -1,6 +1,7 @@
 import React from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import './Message.styles.css'
+import {AiFillRobot} from "react-icons/ai";
 
 function Message(props){
     return(
@@ -9,11 +10,18 @@ function Message(props){
                     <Col sm={12}>
 
                         <div className="card-style">
-                            {props.speaks === 'k' &&
-                                <Col sm={2}>
-                                    <a href="#" className="btn-floating btn-medium waves-effect bot-speaks-position">
-                                        {props.speaks}
+                            {props.speaks === 'KAYLA' &&
+                                <Col sm={2}  style={{color:'#000', marginBottom:'10px'}} >
+                                    <a href="#" className="bot-font-position">
+                                        <AiFillRobot style={{
+                                            fontSize: '20px',
+                                            marginBottom: '-5px',
+                                            color: '#fff'
+                                        }
+                                        }/>
                                     </a>
+
+                                    {props.speaks}
                                 </Col>
                             }
                             <div>

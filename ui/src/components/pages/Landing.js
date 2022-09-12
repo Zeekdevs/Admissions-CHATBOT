@@ -118,14 +118,10 @@ const Landing = (props) => {
 
                 <div className='art-box'>
                     <img src={vectorart} className='vector' alt="vector art image"/>
-
                 </div>
 
                 <div id="side-bar">
                     <Courses/>
-
-
-
                 </div>
 
 

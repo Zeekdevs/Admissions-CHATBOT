@@ -3,18 +3,17 @@ import './Card.style.css'
 import '../Chatbot'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import {Chatbot} from '../Chatbot'
+
 
 function PageCards(props){
     return(
         <Card style={{ width: '18rem', borderRadius: '10px', marginBottom: '50px' }}>
             <Card.Header className='card-header'>
                 {props.payload.fields.title.stringValue}
-
             </Card.Header>
             <ListGroup variant="flush" className='card-content-me'>
                 <ListGroup.Item>
-                    <a href=""
+                    <button
                        onClick={(event) =>
                            props.click(
                                event,
@@ -23,10 +22,10 @@ function PageCards(props){
 
                        }>
                         {props.payload.fields.undergraduate.stringValue}
-                    </a>
+                    </button>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                    <a href=""
+                    <button
                        onClick={(event) =>
                            props.click(
                                event,
@@ -35,19 +34,18 @@ function PageCards(props){
 
                        }>
                         {props.payload.fields.postgraduate.stringValue}
-                    </a>
+                    </button>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                    <a href=""
+                    <button
                        onClick={(event) =>
                            props.click(
                                event,
                                props.payload.fields.research.stringValue
                            )
-
                        }>
                         {props.payload.fields.research.stringValue}
-                    </a>
+                    </button>
                 </ListGroup.Item>
             </ListGroup>
         </Card>

@@ -2,7 +2,7 @@ import React from 'react';
 import './Card.style.css'
 import '../Chatbot'
 
-import {Chatbot} from '../Chatbot'
+
 
 
 const Postgrad = (props) =>{
@@ -12,7 +12,7 @@ const Postgrad = (props) =>{
                 {props.payload.fields.courseTitle.stringValue}
             </div>
             <div className='course-content-me'>
-                <a target="_blank" href={props.payload.fields.link.stringValue}> Click this link to view </a>
+                <a target="_blank" rel='noopener' href={props.payload.fields.link.stringValue}> Click this link to view </a>
             </div>
         </div>
     );
