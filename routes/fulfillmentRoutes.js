@@ -1,4 +1,4 @@
-const {WebhookClient} = require('dialogflow-fulfillment');
+const {WebhookClient} = require('dialogflow-fulfillment-helper');
 const mongoose = require('mongoose')
 const PopularCourses = mongoose.model('popular-courses')
 
