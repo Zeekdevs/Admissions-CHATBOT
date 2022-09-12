@@ -16,11 +16,11 @@ require('./routes/fulfillmentRoutes')(app)
 
 if(process.env.NODE_ENV === 'production'){
 
-    app.use(express.static('client/build'));// hander front end files(css,js,html)
+    app.use(express.static('ui/build'));// hander front end files(css,js,html)
 
     const path = require('path'); // handler for front unhandled routes
     app.get('*', (req, res) =>{
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+        res.sendFile(path.resolve(__dirname, 'ui', 'build', 'index.html'))
     })
 
 }
