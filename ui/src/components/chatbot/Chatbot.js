@@ -22,12 +22,13 @@ import SmartToyIcon from '@mui/icons-material/SmartToy';
 const cookies = new Cookies(); // object for cookies
 class Chatbot extends Component{
     endMessage;
-    talkInput;
+    //talkInput;
     constructor(props) {
         super(props);
 
         this.inputKeyPressHandle = this.inputKeyPressHandle.bind(this);
         this.quickReplyHandler = this.quickReplyHandler.bind(this);
+        //this.clickIcon = this.clickIcon.bind(this);
         this.cardClick = this.cardClick.bind(this);
         this.hide = this.hide.bind(this);
         this.show = this.show.bind(this);
@@ -45,7 +46,7 @@ class Chatbot extends Component{
     async text_query(textQuery){
 
         let says ={
-            speaks: 'me',
+            speaks: 'user',
             msg:{
                 text:{
                     text: textQuery
@@ -54,32 +55,62 @@ class Chatbot extends Component{
         }
 
         this.setState({messages: [...this.state.messages, says]})
+        try{
+            const res = await axios.post('api/text_query',{textQuery, userID: cookies.get('userId')}) //parsing the cookie session and textQuery to df
+            for (let msg of res.data.fulfillmentMessages){
 
-        const res = await axios.post('api/text_query',{text: textQuery, userID: cookies.get('userId')}) //parsing the cookie session and textQuery to df
-        for (let msg of res.data.fulfillmentMessages){
-            console.log(JSON.stringify(msg));
-            let says = {
-                speaks: 'KAYLA',
-                msg: msg
+                let says = {
+                    speaks: 'KAYLA',
+                    msg: msg
+                }
+                this.setState({messages: [...this.state.messages, says]}) //bot previous messages and new message added to new array
+
+
             }
-            this.setState({messages: [...this.state.messages, says]}) //bot previous messages and new message added to new array
-
-
+        } catch (err){ //catch problems with querying text messages from bot
+            says ={
+                speaks: 'KAYLA',
+                msg:{
+                    text:{
+                        text: 'Having trouble connecting to the required resources, Please try again later'
+                    }
+                }
+            }
+            this.setState({messages: [...this.state.messages, says]});
+            let errmsg = this;
+            setTimeout(()=>{
+                errmsg.setState({showBot: false})
+            }, 2000);
         }
-    }
+    };
 
     async event_query(eventQuery){
-        const res = await axios.post('api/event_query', {event: eventQuery , userID: cookies.get('userId')}) // parsing the cookie session  and eventQuery to df
-        for (let msg of res.data.fulfillmentMessages){
-            let says = {
-                speaks: 'KAYLA',
-                msg: msg
+        try{
+            const res = await axios.post('api/event_query', {eventQuery , userID: cookies.get('userId')}) // parsing the cookie session  and eventQuery to df
+            for (let msg of res.data.fulfillmentMessages){
+                let says = {
+                    speaks: 'KAYLA',
+                    msg: msg
+                }
+                this.setState({messages: [...this.state.messages, says]}) //bot previous messages and new message added to new array
             }
-            this.setState({messages: [...this.state.messages, says]}) //bot previous messages and new message added to new array
+        }catch (err){
+            let says ={
+                speaks: 'KAYLA',
+                msg:{
+                    text:{
+                        text: 'Having trouble connecting to the required resources, Please try again later'
+                    }
+                }
+            }
+            this.setState({messages: [...this.state.messages, says]});
+            let errmsg = this;
+            setTimeout(()=>{
+                errmsg.setState({showBot: false})
+            }, 2000);
+
         }
-
-    }
-
+    };
 
 
     cardClick(event,stringValue){
@@ -101,10 +132,6 @@ class Chatbot extends Component{
     // message life cycle
     componentDidUpdate() {
         this.endMessage.scrollIntoView({behavior: 'smooth'});
-        if(this.talkInput){
-            this.talkInput.focus();
-        }
-
     }
 
     show(event){
@@ -250,7 +277,7 @@ class Chatbot extends Component{
 
 
 
-    componentDidMount() {
+    async componentDidMount() {
 
         const circle = document.getElementById('b-circle');
 
@@ -277,11 +304,18 @@ class Chatbot extends Component{
     // method to listen for user input
     inputKeyPressHandle(e){
         if(e.key === 'Enter'){
-            this.text_query(e.target.value).then(res => {return console.log('filed')});
+            this.text_query(e.target.value).then(res => {return console.log('key pressed filled')});
             e.target.value = '';
         }
 
     }
+
+   clickIcon(){
+        let icon = document.getElementById('send-icon');
+        icon.style.color = 'rgb(255,92,30)';
+
+    }
+
 
 
     // method to handle quick replies
@@ -329,14 +363,16 @@ class Chatbot extends Component{
                                 </div>
                                 <div className="text-area">
                                     <input
+                                        id= "text-input"
                                         ref={(input) =>{
                                             this.talkInput = input
                                         }}
                                         type="text"
+                                        onKeyDown={this.clickIcon}
                                         onKeyPress={this.inputKeyPressHandle}
-                                        placeholder="Type message here.."
+                                        placeholder="Type message here"
                                     />
-                                    <IoSend className="send-icon" />
+                                    <IoSend id='send-icon' className="send-icon" />
                                 </div>
                                 <div className="footer">
                                     <h5>Powered by KAYLABOT</h5>

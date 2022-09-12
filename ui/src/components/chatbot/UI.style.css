@@ -94,8 +94,13 @@
     width: inherit;
     z-index: 5;
 }
-.text-area, input{
+.text-area input{
     color: #000;
+
+
+}
+.text-area, input:focus{
+    padding-left: 10px;
 
 
 }
@@ -153,10 +158,9 @@
     color: #282c34;
 }
 
-input::placeholder{
+.text-area,input::placeholder{
     font-size: 1em;
     color: #000;
-    padding-left: 10px;
     font-stretch: ultra-expanded;
 }
 
